@@ -42,7 +42,7 @@ const upload = multer({
 //프로필 이미지 업로드를 위한 multer 설정 
 const path = require('path');
 
-const uploadprofile = require('./config/multerProfileConfig');
+//const uploadprofile = require('./config/multerProfileConfig');
 
 // `uploadprofile` 디렉토리가 존재하지 않으면 생성합니다.
 const uploadDir = path.join(__dirname, 'uploadprofile');
@@ -101,12 +101,12 @@ app.use((req, res, next) => {
 });
 
 // Router
-const homeRouter = require("./routers/homeRouter.js")
-const postRouter = require("./routers/postRouter.js")
-const joinFundingRouter = require("./routers/joinFundingRouter.js")
-const writeRouter = require("./routers/writeRouter.js")
-const searchRouter = require("./routers/searchRouter.js")
-const createFundingRouter = require("./routers/createFundingRouter.js")
+//const homeRouter = require("./routers/homeRouter.js")
+//const postRouter = require("./routers/postRouter.js")
+//const joinFundingRouter = require("./routers/joinFundingRouter.js")
+//const writeRouter = require("./routers/writeRouter.js")
+//const searchRouter = require("./routers/searchRouter.js")
+//const createFundingRouter = require("./routers/createFundingRouter.js")
 const authRouter = require("./routers/authRouter");
 
 
