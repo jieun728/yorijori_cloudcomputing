@@ -111,19 +111,19 @@ const authRouter = require("./routers/authRouter");
 
 
 // home 접근
-app.use("/", homeRouter);
+//app.use("/", homeRouter);
 // search 접근
-app.use("/search", searchRouter);
+//app.use("/search", searchRouter);
 // post 접근
-app.use("/posts", postRouter);
+//app.use("/posts", postRouter);
 //write 접근
-app.use("/write", writeRouter);
+//app.use("/write", writeRouter);
 // 로그인 및 사용자 관리 접근
 app.use("/auth", authRouter);
 // createFundingRouter 접근
-app.use("/createfundingPage", createFundingRouter);
+//app.use("/createfundingPage", createFundingRouter);
 // joinFundingRouter 접근
-app.use("/joinfundingPage", joinFundingRouter);
+//app.use("/joinfundingPage", joinFundingRouter);
 
 
 //플래시 메시지 미들웨어 설정
