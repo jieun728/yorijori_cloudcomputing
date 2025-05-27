@@ -1,24 +1,21 @@
-const Sequelize = require('sequelize');
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.js')[env];
-const db= {};
+const { Sequelize, DataTypes } = require('sequelize');
+require('dotenv').config(); // .env 사용
 
-let sequelize = new Sequelize(config.database, config.username, config.password, config);
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    dialect: 'mysql',
+  }
+);
 
+const db = {};
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.user = require("./user.js")(sequelize, DataTypes);
 
-db.user = require("./user.js")(sequelize, Sequelize); //사용자
+module.exports = db;
 
-
-// Users and Addresses
-// db.user.belongsTo(db.address, { foreignKey: 'addressId' });
-// db.address.hasMany(db.user, { foreignKey: 'addressId' });
-
-// Users and Posts
-// db.user.hasMany(db.post, { foreignKey: 'userId' });
-// db.post.belongsTo(db.user, { foreignKey: 'userId' });
-
-
-module.exports= db;

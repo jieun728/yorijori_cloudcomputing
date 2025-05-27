@@ -109,6 +109,8 @@ app.use((req, res, next) => {
 //const createFundingRouter = require("./routers/createFundingRouter.js")
 const authRouter = require("./routers/authRouter");
 
+const testRouter = require('./routers/testRouter');
+app.use('/api', testRouter);
 
 // home 접근
 //app.use("/", homeRouter);
